@@ -1,0 +1,33 @@
+enable
+configure terminal
+interface gigabitethernet 0/0
+ip address 192.168.20.1 255.255.255.0
+no shutdown
+
+hostname R1-COPY
+
+copy running-config startup-config
+
+// Restart router and check 
+
+copy startup-config tftp:
+>192.168.20.200
+>R1-COPY-BACKUP
+
+// Delete router and make new one
+
+// configurete minimal connection to the back up server
+enable
+configure terminal
+interface gigabitethernet 0/0
+ip address 192.168.20.1 255.255.255.0
+no shutdown
+
+copy tftp: startup-config
+>192.168.20.200
+>R1-COPY-BACKUP
+> [defualt]
+
+// Restart router and check 
+
+// Work!
