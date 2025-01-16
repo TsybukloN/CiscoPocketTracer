@@ -1,0 +1,86 @@
+1. basic_router_configuration
+
+	Router>enable
+
+	//jump to priviledge level
+
+
+
+	Router(config)#
+
+	// jump to global configuration level
+
+
+
+	Router(config)#hostname WIZARD
+
+	//give a name to our router
+
+
+
+	WIZARD#copy running-config startup-config
+
+	//save the configuration of our router
+
+
+
+2. basic_configuration_of_interface
+
+
+
+	WIZARD(config)#interface gigabitEthernet 0/1
+
+	// jumpt o interface gigabit 0/1
+
+
+
+	WIZARD(config-if)#description interface_belongs_to_test_network
+
+	//add a description
+
+
+
+	WIZARD(config-if)#ip address 192.168.10.1 255.255.255.0
+
+	// add ip addressation
+
+
+
+WIZARD(config-if)#no shutdown
+
+// turn on of our interace
+
+
+
+3. basic_dhcp_configuration
+
+
+	WIZARD(config)#ip dhcp pool test-pool
+
+	// create of dhcp pool (plus name of this pool)
+
+
+
+	WIZARD(dhcp-config)#network 192.168.10.0 255.255.255.0
+
+	// add information about network address (to our dhcp pool)
+
+
+
+	WIZARD(dhcp-config)#default-router 192.168.10.1
+
+	// add information about gateway (without mask!!!!)
+
+
+
+	WIZARD(config)#ip dhcp excluded-address 192.168.10.1 192.168.10.10
+
+	// exclude range of addresses
+
+4. tftp backup
+
+	WIZARD#copy running-config startup-config
+
+	// Before next command 
+
+	WIZARD#copy startup-config tftp
