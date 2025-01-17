@@ -38,3 +38,7 @@ switchport access vlan 11
 
 // configuration for range of interfaces
 face range fastEthernter 0/x-y
+
+---------------------------------------------
+
+trunk 
