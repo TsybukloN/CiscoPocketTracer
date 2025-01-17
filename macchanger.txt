@@ -1,0 +1,40 @@
+GNU MAC Changer
+Usage: macchanger [options] device
+
+  -h,  --help                   Print this help
+  -V,  --version                Print version and exit
+  -s,  --show                   Print the MAC address and exit
+  -e,  --ending                 Don't change the vendor bytes
+  -a,  --another                Set random vendor MAC of the same kind
+  -A                            Set random vendor MAC of any kind
+  -p,  --permanent              Reset to original, permanent hardware MAC
+  -r,  --random                 Set fully random MAC
+  -l,  --list[=keyword]         Print known vendors
+  -b,  --bia                    Pretend to be a burned-in-address
+  -m,  --mac=XX:XX:XX:XX:XX:XX
+       --mac XX:XX:XX:XX:XX:XX  Set the MAC XX:XX:XX:XX:XX:XX
+
+Report bugs to https://github.com/alobbs/macchanger/issues
+
+technmitium mac changer - for Windows
+
+For Switch and Routers 
+
+mac-address aaaa.bbbb.cccc // change mac address for a choosen interface 
+
+// Show all vlans
+show vlan brief 
+
+// Create valn 
+vlan 11
+name yellow-vlan
+
+// Delete vlan 
+no vlan 12
+
+
+switchport mode access
+switchport access vlan 11
+
+// configuration for range of interfaces
+face range fastEthernter 0/x-y

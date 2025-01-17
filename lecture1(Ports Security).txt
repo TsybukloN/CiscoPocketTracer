@@ -1,0 +1,22 @@
+configure terminal
+interface [interface_id]
+
+switchport mode access
+
+switchport port-security mac-address [MAC_ADDRESS]
+or
+switchport port-security mac-address stricy
+
+switchport port-security maximum [number]
+
+Protect: Блокирует трафик с нежелательных MAC-адресов, не отправляя уведомления.
+Restrict: Блокирует трафик и отправляет уведомление.
+Shutdown: Отключает порт при нарушении (режим по умолчанию).
+
+switchport port-security violation [protect | restrict | shutdown]
+
+
+end
+write memory
+or
+copy running-config startup-config
