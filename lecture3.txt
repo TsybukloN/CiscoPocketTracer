@@ -1,0 +1,26 @@
+ARP - Address Resocution Protocol
+
+----------------------------
+
+CAM table => Port - MAC address
+
+----------------------------
+
+ARP table => MAC address - IP address
+
+Packet -> Data "Form" in layer 2, 3
+
+IP source send frame to IP destination
+
+// Show arp table
+show arp
+arp -a
+
+// Show route table
+show ip route
+
+// Add route
+ip route <ip-of-network> <mask>
+
+// Delete route
+no ip route <ip-of-network> <mask>
